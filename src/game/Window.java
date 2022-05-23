@@ -21,6 +21,12 @@ public class Window extends JFrame {
 		//フレームを閉じたときの処理
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		//ラベル作成
+		handLabel = new JLabel("PC:", JLabel.CENTER);
+		
+		
+		
+		
 		//フレームを表示
 		setVisible(true);
 	}
