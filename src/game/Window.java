@@ -1,6 +1,7 @@
 package game;
 
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -47,6 +48,14 @@ public class Window extends JFrame {
 		//フレームにパネルを追加
 		add(handPanel);
 		add(resultPanel);
+		
+		//ボタン追加
+		JPanel buttonPanel = new JPanel();
+		for (int i = 0; i < Hand.hands.length; i++) {
+			JButton button = new JButton(Hand.hands[i]);
+			buttonPanel.add(button);
+		}
+		add(buttonPanel);
 		
 		BoxLayout boxlayout = new BoxLayout(getContentPane(), BoxLayout.Y_AXIS);
 		setLayout(boxlayout);
