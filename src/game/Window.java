@@ -1,5 +1,6 @@
 package game;
 
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -23,9 +24,21 @@ public class Window extends JFrame {
 		
 		//ラベル作成
 		handLabel = new JLabel("PC:", JLabel.CENTER);
+		resultLabel = new JLabel("じゃんけん", JLabel.CENTER);
 		
+		//パネル作成
+		handPanel = new JPanel();
+		handPanel.add(handLabel);
+
+		resultPanel = new JPanel();
+		resultPanel.add(resultLabel);
 		
+		//フレームにパネルを追加
+		add(handPanel);
+		add(resultPanel);
 		
+		BoxLayout boxlayout = new BoxLayout(getContentPane(), BoxLayout.Y_AXIS);
+		setLayout(boxlayout);
 		
 		//フレームを表示
 		setVisible(true);
