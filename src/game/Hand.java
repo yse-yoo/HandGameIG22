@@ -38,6 +38,14 @@ public class Hand {
 					|| (playerHand == SICCORS && pcHand == PAPER)
 					|| (playerHand == PAPER && pcHand == ROCK)
 					) ? "Win" : "Lose";
+			
+//			if ((playerHand == ROCK && pcHand == SICCORS)
+//					|| (playerHand == SICCORS && pcHand == PAPER)
+//					|| (playerHand == PAPER && pcHand == ROCK)) {
+//				result = "Win";
+//			} else {
+//				result = "Lose";
+//			}
 		}
 	}
 
