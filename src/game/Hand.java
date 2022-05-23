@@ -27,7 +27,7 @@ public class Hand {
 		int handIndex = rand.nextInt(3);
 		pcHand = hands[handIndex];
 		
-
+		//player vs pc
 		if (playerHand == pcHand) {
 			//Draw
 			result = "Draw";
