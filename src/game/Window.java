@@ -14,6 +14,17 @@ public class Window extends JFrame {
 	//パネル
 	JPanel handPanel;
 	JPanel resultPanel;
+	
+	
+	//Handインスタンス
+	Hand hand;
+
+	//コンストラクタ
+	public Window(Hand hand) {
+		super();
+		this.hand = hand;
+	}
+
 
 	//pub と入力し、Ctrl + スペース
 	public void create() {
