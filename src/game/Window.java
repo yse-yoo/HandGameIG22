@@ -1,8 +1,18 @@
 package game;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class Window extends JFrame {
+	
+	//ラベル
+	JLabel handLabel;
+	JLabel resultLabel;
+	
+	//パネル
+	JPanel handPanel;
+	JPanel resultPanel;
 
 	//pub と入力し、Ctrl + スペース
 	public void create() {
