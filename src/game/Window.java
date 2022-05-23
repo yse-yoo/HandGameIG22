@@ -1,9 +1,11 @@
 package game;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -33,13 +35,17 @@ public class Window extends JFrame implements ActionListener {
 	//pub と入力し、Ctrl + スペース
 	public void create() {
 		//フレームのサイズ
-		setBounds(500, 500, 300, 200);
+		setBounds(500, 500, 800, 500);
 		//フレームを閉じたときの処理
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//ラベル作成
 		handLabel = new JLabel("PC:", JLabel.CENTER);
 		resultLabel = new JLabel("じゃんけん", JLabel.CENTER);
+		
+		Font font = new Font("ＭＳ ゴシック", Font.BOLD, 50);
+		handLabel.setFont(font);
+		resultLabel.setFont(font);
 		
 		//パネル作成
 		handPanel = new JPanel();
@@ -56,9 +62,10 @@ public class Window extends JFrame implements ActionListener {
 		JPanel buttonPanel = new JPanel();
 		for (int i = 0; i < Hand.hands.length; i++) {
 			//画像ボタンの場合
-//			ImageIcon icon = new ImageIcon("./images/" + Hand.images[i]);
-//			JButton button = new JButton(icon);
-			JButton button = new JButton(Hand.hands[i]);
+			ImageIcon icon = new ImageIcon("./images/" + Hand.images[i]);
+			JButton button = new JButton(icon);
+			button.setActionCommand(Hand.hands[i]);
+//			JButton button = new JButton(Hand.hands[i]);
 			//イベントリスナーを登録
 			button.addActionListener(this);
 			buttonPanel.add(button);
@@ -77,11 +84,15 @@ public class Window extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String playerHand = e.getActionCommand();
 		hand.play(playerHand);
+		System.out.println(playerHand);
 		
 		handLabel.setText("PC: " + hand.pcHand);
 		resultLabel.setText(hand.result);
 	}
 
 
+	
+	
+	
 	
 }
